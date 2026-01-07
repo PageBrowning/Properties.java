@@ -1,3 +1,8 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package xbean.__;
 
 import com.goldhuman.Common.Marshal.MarshalException;
@@ -966,7 +971,6 @@ public final class Properties extends XBean implements xbean.Properties {
         return this.dayonlineseconds;
     }
 
-//* 第二段
     public long getOnlineseconds() {
         this._xdb_verify_unsafe_();
         return this.onlineseconds;
