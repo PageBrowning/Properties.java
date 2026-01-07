@@ -34,36 +34,36 @@ import xdb.logs.LogLong;
 import xdb.util.SetX;
 
 public final class Properties extends XBean implements xbean.Properties {
-    private long level;
-    private long exp;
-    private long hp;
-    private long mp;
-    private long anger;
-    private long vigor;
+    private int level;
+    private int exp;
+    private int hp;
+    private int mp;
+    private int anger;
+    private int vigor;
     private HashMap<Integer, BasicPropertiesSystem> propertysysmap;
-    private long activitybpsys;
-    private long todaypropsysswitchcount;
+    private int activitybpsys;
+    private int todaypropsysswitchcount;
     private long timestamp;
     private Location location;
     private long gold;
     private long silver;
     private long goldingot;
-    private long dyecolorid;
-    private long baoshidu;
+    private int dyecolorid;
+    private int baoshidu;
     private long lastlogintime;
     private long lastlogofftime;
     private long keeponlinetime;
-    private long fightvalue;
+    private int fightvalue;
     private long leveluptime;
     private long accumulateleveluptime;
     private long vigorrefreshtime;
-    private long convertxiulianexp;
+    private int convertxiulianexp;
     private SetX<Long> compensates;
     private HashMap<Integer, GatherMapItemInfo> gather_map_item_infos;
     private long lastcalcuatetime;
-    private long dayonlineseconds;
+    private int dayonlineseconds;
     private long onlineseconds;
-    private long send_recharge_times_tip_mail_no;
+    private int send_recharge_times_tip_mail_no;
     private long levelupcurtime;
     private HashMap<Integer, TransferOccupationPropertiesSys> transfer_occupation_property_sys_map;
     private HashMap<Integer, CoinInfo> coins;
@@ -358,12 +358,12 @@ public final class Properties extends XBean implements xbean.Properties {
 
     public final OctetsStream unmarshal(OctetsStream _os_) throws MarshalException {
         this._xdb_verify_unsafe_();
-        this.level = _os_.unmarshal_long;
-        this.exp = _os_.unmarshal_long;
-        this.hp = _os_.unmarshal_long;
-        this.mp = _os_.unmarshal_long;
-        this.anger = _os_.unmarshal_long;
-        this.vigor = _os_.unmarshal_long;
+        this.level = _os_.unmarshal_int();
+        this.exp = _os_.unmarshal_int();
+        this.hp = _os_.unmarshal_int();
+        this.mp = _os_.unmarshal_int();
+        this.anger = _os_.unmarshal_int();
+        this.vigor = _os_.unmarshal_int();
         int size = _os_.uncompact_uint32();
         if (size >= 12) {
             this.propertysysmap = new HashMap(size * 2);
@@ -380,23 +380,23 @@ public final class Properties extends XBean implements xbean.Properties {
             --size;
         }
 
-        this.activitybpsys = _os_.unmarshal_long;
-        this.todaypropsysswitchcount = _os_.unmarshal_long;
+        this.activitybpsys = _os_.unmarshal_int();
+        this.todaypropsysswitchcount = _os_.unmarshal_int();
         this.timestamp = _os_.unmarshal_long();
         this.location.unmarshal(_os_);
         this.gold = _os_.unmarshal_long();
         this.silver = _os_.unmarshal_long();
         this.goldingot = _os_.unmarshal_long();
-        this.dyecolorid = _os_.unmarshal_long;
-        this.baoshidu = _os_.unmarshal_long;
+        this.dyecolorid = _os_.unmarshal_int();
+        this.baoshidu = _os_.unmarshal_int();
         this.lastlogintime = _os_.unmarshal_long();
         this.lastlogofftime = _os_.unmarshal_long();
         this.keeponlinetime = _os_.unmarshal_long();
-        this.fightvalue = _os_.unmarshal_long;
+        this.fightvalue = _os_.unmarshal_int();
         this.leveluptime = _os_.unmarshal_long();
         this.accumulateleveluptime = _os_.unmarshal_long();
         this.vigorrefreshtime = _os_.unmarshal_long();
-        this.convertxiulianexp = _os_.unmarshal_long;
+        this.convertxiulianexp = _os_.unmarshal_int();
 
         for(size = _os_.uncompact_uint32(); size > 0; --size) {
             long _v_ = 0L;
@@ -419,9 +419,9 @@ public final class Properties extends XBean implements xbean.Properties {
         }
 
         this.lastcalcuatetime = _os_.unmarshal_long();
-        this.dayonlineseconds = _os_.unmarshal_long;
+        this.dayonlineseconds = _os_.unmarshal_int();
         this.onlineseconds = _os_.unmarshal_long();
-        this.send_recharge_times_tip_mail_no = _os_.unmarshal_long;
+        this.send_recharge_times_tip_mail_no = _os_.unmarshal_int();
         this.levelupcurtime = _os_.unmarshal_long();
         size = _os_.uncompact_uint32();
         if (size >= 12) {
@@ -793,32 +793,32 @@ public final class Properties extends XBean implements xbean.Properties {
         return new Const();
     }
 
-    public long getLevel {
+    public int getLevel() {
         this._xdb_verify_unsafe_();
         return this.level;
     }
 
-    public long getExp {
+    public int getExp() {
         this._xdb_verify_unsafe_();
         return this.exp;
     }
 
-    public long getHp {
+    public int getHp() {
         this._xdb_verify_unsafe_();
         return this.hp;
     }
 
-    public long getMp {
+    public int getMp() {
         this._xdb_verify_unsafe_();
         return this.mp;
     }
 
-    public long getAnger {
+    public int getAnger() {
         this._xdb_verify_unsafe_();
         return this.anger;
     }
 
-    public long getVigor {
+    public int getVigor() {
         this._xdb_verify_unsafe_();
         return this.vigor;
     }
@@ -841,12 +841,12 @@ public final class Properties extends XBean implements xbean.Properties {
         return propertysysmap;
     }
 
-    public long getActivitybpsys {
+    public int getActivitybpsys() {
         this._xdb_verify_unsafe_();
         return this.activitybpsys;
     }
 
-    public long getTodaypropsysswitchcount {
+    public int getTodaypropsysswitchcount() {
         this._xdb_verify_unsafe_();
         return this.todaypropsysswitchcount;
     }
@@ -876,12 +876,12 @@ public final class Properties extends XBean implements xbean.Properties {
         return this.goldingot;
     }
 
-    public long getDyecolorid {
+    public int getDyecolorid() {
         this._xdb_verify_unsafe_();
         return this.dyecolorid;
     }
 
-    public long getBaoshidu {
+    public int getBaoshidu() {
         this._xdb_verify_unsafe_();
         return this.baoshidu;
     }
@@ -901,7 +901,7 @@ public final class Properties extends XBean implements xbean.Properties {
         return this.keeponlinetime;
     }
 
-    public long getFightvalue {
+    public int getFightvalue() {
         this._xdb_verify_unsafe_();
         return this.fightvalue;
     }
@@ -921,7 +921,7 @@ public final class Properties extends XBean implements xbean.Properties {
         return this.vigorrefreshtime;
     }
 
-    public long getConvertxiulianexp {
+    public int getConvertxiulianexp() {
         this._xdb_verify_unsafe_();
         return this.convertxiulianexp;
     }
@@ -961,17 +961,18 @@ public final class Properties extends XBean implements xbean.Properties {
         return this.lastcalcuatetime;
     }
 
-    public long getDayonlineseconds {
+    public int getDayonlineseconds() {
         this._xdb_verify_unsafe_();
         return this.dayonlineseconds;
     }
 
+//* 第二段
     public long getOnlineseconds() {
         this._xdb_verify_unsafe_();
         return this.onlineseconds;
     }
 
-    public long getSend_recharge_times_tip_mail_no {
+    public int getSend_recharge_times_tip_mail_no() {
         this._xdb_verify_unsafe_();
         return this.send_recharge_times_tip_mail_no;
     }
@@ -1017,7 +1018,7 @@ public final class Properties extends XBean implements xbean.Properties {
         return coins;
     }
 
-    public void setLevellong _v_ {
+    public void setLevel(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "level") {
             protected Log create() {
@@ -1031,7 +1032,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.level = _v_;
     }
 
-    public void setExplong _v_ {
+    public void setExp(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "exp") {
             protected Log create() {
@@ -1045,7 +1046,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.exp = _v_;
     }
 
-    public void setHplong _v_ {
+    public void setHp(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "hp") {
             protected Log create() {
@@ -1059,7 +1060,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.hp = _v_;
     }
 
-    public void setMplong _v_ {
+    public void setMp(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "mp") {
             protected Log create() {
@@ -1073,7 +1074,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.mp = _v_;
     }
 
-    public void setAngerlong _v_ {
+    public void setAnger(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "anger") {
             protected Log create() {
@@ -1087,7 +1088,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.anger = _v_;
     }
 
-    public void setVigorlong _v_ {
+    public void setVigor(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "vigor") {
             protected Log create() {
@@ -1101,7 +1102,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.vigor = _v_;
     }
 
-    public void setActivitybpsyslong _v_ {
+    public void setActivitybpsys(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "activitybpsys") {
             protected Log create() {
@@ -1115,7 +1116,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.activitybpsys = _v_;
     }
 
-    public void setTodaypropsysswitchcountlong _v_ {
+    public void setTodaypropsysswitchcount(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "todaypropsysswitchcount") {
             protected Log create() {
@@ -1185,7 +1186,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.goldingot = _v_;
     }
 
-    public void setDyecoloridlong _v_ {
+    public void setDyecolorid(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "dyecolorid") {
             protected Log create() {
@@ -1199,7 +1200,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.dyecolorid = _v_;
     }
 
-    public void setBaoshidulong _v_ {
+    public void setBaoshidu(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "baoshidu") {
             protected Log create() {
@@ -1255,7 +1256,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.keeponlinetime = _v_;
     }
 
-    public void setFightvaluelong _v_ {
+    public void setFightvalue(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "fightvalue") {
             protected Log create() {
@@ -1311,7 +1312,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.vigorrefreshtime = _v_;
     }
 
-    public void setConvertxiulianexplong _v_ {
+    public void setConvertxiulianexp(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "convertxiulianexp") {
             protected Log create() {
@@ -1339,7 +1340,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.lastcalcuatetime = _v_;
     }
 
-    public void setDayonlinesecondslong _v_ {
+    public void setDayonlineseconds(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "dayonlineseconds") {
             protected Log create() {
@@ -1367,7 +1368,7 @@ public final class Properties extends XBean implements xbean.Properties {
         this.onlineseconds = _v_;
     }
 
-    public void setSend_recharge_times_tip_mail_nolong _v_ {
+    public void setSend_recharge_times_tip_mail_no(int _v_) {
         this._xdb_verify_unsafe_();
         Logs.logIf(new LogKey(this, "send_recharge_times_tip_mail_no") {
             protected Log create() {
@@ -1628,36 +1629,36 @@ public final class Properties extends XBean implements xbean.Properties {
     }
 
     public static final class Data implements xbean.Properties {
-        private long level;
-        private long exp;
-        private long hp;
-        private long mp;
-        private long anger;
-        private long vigor;
+        private int level;
+        private int exp;
+        private int hp;
+        private int mp;
+        private int anger;
+        private int vigor;
         private HashMap<Integer, BasicPropertiesSystem> propertysysmap;
-        private long activitybpsys;
-        private long todaypropsysswitchcount;
+        private int activitybpsys;
+        private int todaypropsysswitchcount;
         private long timestamp;
         private Location location;
         private long gold;
         private long silver;
         private long goldingot;
-        private long dyecolorid;
-        private long baoshidu;
+        private int dyecolorid;
+        private int baoshidu;
         private long lastlogintime;
         private long lastlogofftime;
         private long keeponlinetime;
-        private long fightvalue;
+        private int fightvalue;
         private long leveluptime;
         private long accumulateleveluptime;
         private long vigorrefreshtime;
-        private long convertxiulianexp;
+        private int convertxiulianexp;
         private HashSet<Long> compensates;
         private HashMap<Integer, GatherMapItemInfo> gather_map_item_infos;
         private long lastcalcuatetime;
-        private long dayonlineseconds;
+        private int dayonlineseconds;
         private long onlineseconds;
-        private long send_recharge_times_tip_mail_no;
+        private int send_recharge_times_tip_mail_no;
         private long levelupcurtime;
         private HashMap<Integer, TransferOccupationPropertiesSys> transfer_occupation_property_sys_map;
         private HashMap<Integer, CoinInfo> coins;
@@ -1907,12 +1908,12 @@ public final class Properties extends XBean implements xbean.Properties {
         }
 
         public final OctetsStream unmarshal(OctetsStream _os_) throws MarshalException {
-            this.level = _os_.unmarshal_long;
-            this.exp = _os_.unmarshal_long;
-            this.hp = _os_.unmarshal_long;
-            this.mp = _os_.unmarshal_long;
-            this.anger = _os_.unmarshal_long;
-            this.vigor = _os_.unmarshal_long;
+            this.level = _os_.unmarshal_int();
+            this.exp = _os_.unmarshal_int();
+            this.hp = _os_.unmarshal_int();
+            this.mp = _os_.unmarshal_int();
+            this.anger = _os_.unmarshal_int();
+            this.vigor = _os_.unmarshal_int();
             int size = _os_.uncompact_uint32();
             if (size >= 12) {
                 this.propertysysmap = new HashMap(size * 2);
@@ -1929,23 +1930,23 @@ public final class Properties extends XBean implements xbean.Properties {
                 --size;
             }
 
-            this.activitybpsys = _os_.unmarshal_long;
-            this.todaypropsysswitchcount = _os_.unmarshal_long;
+            this.activitybpsys = _os_.unmarshal_int();
+            this.todaypropsysswitchcount = _os_.unmarshal_int();
             this.timestamp = _os_.unmarshal_long();
             this.location.unmarshal(_os_);
             this.gold = _os_.unmarshal_long();
             this.silver = _os_.unmarshal_long();
             this.goldingot = _os_.unmarshal_long();
-            this.dyecolorid = _os_.unmarshal_long;
-            this.baoshidu = _os_.unmarshal_long;
+            this.dyecolorid = _os_.unmarshal_int();
+            this.baoshidu = _os_.unmarshal_int();
             this.lastlogintime = _os_.unmarshal_long();
             this.lastlogofftime = _os_.unmarshal_long();
             this.keeponlinetime = _os_.unmarshal_long();
-            this.fightvalue = _os_.unmarshal_long;
+            this.fightvalue = _os_.unmarshal_int();
             this.leveluptime = _os_.unmarshal_long();
             this.accumulateleveluptime = _os_.unmarshal_long();
             this.vigorrefreshtime = _os_.unmarshal_long();
-            this.convertxiulianexp = _os_.unmarshal_long;
+            this.convertxiulianexp = _os_.unmarshal_int();
 
             for(size = _os_.uncompact_uint32(); size > 0; --size) {
                 long _v_ = 0L;
@@ -1968,9 +1969,9 @@ public final class Properties extends XBean implements xbean.Properties {
             }
 
             this.lastcalcuatetime = _os_.unmarshal_long();
-            this.dayonlineseconds = _os_.unmarshal_long;
+            this.dayonlineseconds = _os_.unmarshal_int();
             this.onlineseconds = _os_.unmarshal_long();
-            this.send_recharge_times_tip_mail_no = _os_.unmarshal_long;
+            this.send_recharge_times_tip_mail_no = _os_.unmarshal_int();
             this.levelupcurtime = _os_.unmarshal_long();
             size = _os_.uncompact_uint32();
             if (size >= 12) {
@@ -2355,27 +2356,27 @@ public final class Properties extends XBean implements xbean.Properties {
             return true;
         }
 
-        public long getLevel {
+        public int getLevel() {
             return this.level;
         }
 
-        public long getExp {
+        public int getExp() {
             return this.exp;
         }
 
-        public long getHp {
+        public int getHp() {
             return this.hp;
         }
 
-        public long getMp {
+        public int getMp() {
             return this.mp;
         }
 
-        public long getAnger {
+        public int getAnger() {
             return this.anger;
         }
 
-        public long getVigor {
+        public int getVigor() {
             return this.vigor;
         }
 
@@ -2387,11 +2388,11 @@ public final class Properties extends XBean implements xbean.Properties {
             return this.propertysysmap;
         }
 
-        public long getActivitybpsys {
+        public int getActivitybpsys() {
             return this.activitybpsys;
         }
 
-        public long getTodaypropsysswitchcount {
+        public int getTodaypropsysswitchcount() {
             return this.todaypropsysswitchcount;
         }
 
@@ -2415,11 +2416,11 @@ public final class Properties extends XBean implements xbean.Properties {
             return this.goldingot;
         }
 
-        public long getDyecolorid {
+        public int getDyecolorid() {
             return this.dyecolorid;
         }
 
-        public long getBaoshidu {
+        public int getBaoshidu() {
             return this.baoshidu;
         }
 
@@ -2435,7 +2436,7 @@ public final class Properties extends XBean implements xbean.Properties {
             return this.keeponlinetime;
         }
 
-        public long getFightvalue {
+        public int getFightvalue() {
             return this.fightvalue;
         }
 
@@ -2451,7 +2452,7 @@ public final class Properties extends XBean implements xbean.Properties {
             return this.vigorrefreshtime;
         }
 
-        public long getConvertxiulianexp {
+        public int getConvertxiulianexp() {
             return this.convertxiulianexp;
         }
 
@@ -2475,7 +2476,7 @@ public final class Properties extends XBean implements xbean.Properties {
             return this.lastcalcuatetime;
         }
 
-        public long getDayonlineseconds {
+        public int getDayonlineseconds() {
             return this.dayonlineseconds;
         }
 
@@ -2483,7 +2484,7 @@ public final class Properties extends XBean implements xbean.Properties {
             return this.onlineseconds;
         }
 
-        public long getSend_recharge_times_tip_mail_no {
+        public int getSend_recharge_times_tip_mail_no() {
             return this.send_recharge_times_tip_mail_no;
         }
 
@@ -2507,35 +2508,35 @@ public final class Properties extends XBean implements xbean.Properties {
             return this.coins;
         }
 
-        public void setLevellong _v_ {
+        public void setLevel(int _v_) {
             this.level = _v_;
         }
 
-        public void setExplong _v_ {
+        public void setExp(int _v_) {
             this.exp = _v_;
         }
 
-        public void setHplong _v_ {
+        public void setHp(int _v_) {
             this.hp = _v_;
         }
 
-        public void setMplong _v_ {
+        public void setMp(int _v_) {
             this.mp = _v_;
         }
 
-        public void setAngerlong _v_ {
+        public void setAnger(int _v_) {
             this.anger = _v_;
         }
 
-        public void setVigorlong _v_ {
+        public void setVigor(int _v_) {
             this.vigor = _v_;
         }
 
-        public void setActivitybpsyslong _v_ {
+        public void setActivitybpsys(int _v_) {
             this.activitybpsys = _v_;
         }
 
-        public void setTodaypropsysswitchcountlong _v_ {
+        public void setTodaypropsysswitchcount(int _v_) {
             this.todaypropsysswitchcount = _v_;
         }
 
@@ -2555,11 +2556,11 @@ public final class Properties extends XBean implements xbean.Properties {
             this.goldingot = _v_;
         }
 
-        public void setDyecoloridlong _v_ {
+        public void setDyecolorid(int _v_) {
             this.dyecolorid = _v_;
         }
 
-        public void setBaoshidulong _v_ {
+        public void setBaoshidu(int _v_) {
             this.baoshidu = _v_;
         }
 
@@ -2575,7 +2576,7 @@ public final class Properties extends XBean implements xbean.Properties {
             this.keeponlinetime = _v_;
         }
 
-        public void setFightvaluelong _v_ {
+        public void setFightvalue(int _v_) {
             this.fightvalue = _v_;
         }
 
@@ -2591,7 +2592,7 @@ public final class Properties extends XBean implements xbean.Properties {
             this.vigorrefreshtime = _v_;
         }
 
-        public void setConvertxiulianexplong _v_ {
+        public void setConvertxiulianexp(int _v_) {
             this.convertxiulianexp = _v_;
         }
 
@@ -2599,7 +2600,7 @@ public final class Properties extends XBean implements xbean.Properties {
             this.lastcalcuatetime = _v_;
         }
 
-        public void setDayonlinesecondslong _v_ {
+        public void setDayonlineseconds(int _v_) {
             this.dayonlineseconds = _v_;
         }
 
@@ -2607,7 +2608,7 @@ public final class Properties extends XBean implements xbean.Properties {
             this.onlineseconds = _v_;
         }
 
-        public void setSend_recharge_times_tip_mail_nolong _v_ {
+        public void setSend_recharge_times_tip_mail_no(int _v_) {
             this.send_recharge_times_tip_mail_no = _v_;
         }
 
@@ -2833,32 +2834,32 @@ public final class Properties extends XBean implements xbean.Properties {
             return Properties.this.toBeanIf();
         }
 
-        public long getLevel {
+        public int getLevel() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.level;
         }
 
-        public long getExp {
+        public int getExp() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.exp;
         }
 
-        public long getHp {
+        public int getHp() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.hp;
         }
 
-        public long getMp {
+        public int getMp() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.mp;
         }
 
-        public long getAnger {
+        public int getAnger() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.anger;
         }
 
-        public long getVigor {
+        public int getVigor() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.vigor;
         }
@@ -2882,12 +2883,12 @@ public final class Properties extends XBean implements xbean.Properties {
             return propertysysmap;
         }
 
-        public long getActivitybpsys {
+        public int getActivitybpsys() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.activitybpsys;
         }
 
-        public long getTodaypropsysswitchcount {
+        public int getTodaypropsysswitchcount() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.todaypropsysswitchcount;
         }
@@ -2917,12 +2918,12 @@ public final class Properties extends XBean implements xbean.Properties {
             return Properties.this.goldingot;
         }
 
-        public long getDyecolorid {
+        public int getDyecolorid() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.dyecolorid;
         }
 
-        public long getBaoshidu {
+        public int getBaoshidu() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.baoshidu;
         }
@@ -2942,7 +2943,7 @@ public final class Properties extends XBean implements xbean.Properties {
             return Properties.this.keeponlinetime;
         }
 
-        public long getFightvalue {
+        public int getFightvalue() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.fightvalue;
         }
@@ -2962,7 +2963,7 @@ public final class Properties extends XBean implements xbean.Properties {
             return Properties.this.vigorrefreshtime;
         }
 
-        public long getConvertxiulianexp {
+        public int getConvertxiulianexp() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.convertxiulianexp;
         }
@@ -3004,7 +3005,7 @@ public final class Properties extends XBean implements xbean.Properties {
             return Properties.this.lastcalcuatetime;
         }
 
-        public long getDayonlineseconds {
+        public int getDayonlineseconds() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.dayonlineseconds;
         }
@@ -3014,7 +3015,7 @@ public final class Properties extends XBean implements xbean.Properties {
             return Properties.this.onlineseconds;
         }
 
-        public long getSend_recharge_times_tip_mail_no {
+        public int getSend_recharge_times_tip_mail_no() {
             Properties.this._xdb_verify_unsafe_();
             return Properties.this.send_recharge_times_tip_mail_no;
         }
@@ -3062,42 +3063,42 @@ public final class Properties extends XBean implements xbean.Properties {
             return coins;
         }
 
-        public void setLevellong _v_ {
+        public void setLevel(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
 
-        public void setExplong _v_ {
+        public void setExp(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
 
-        public void setHplong _v_ {
+        public void setHp(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
 
-        public void setMplong _v_ {
+        public void setMp(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
 
-        public void setAngerlong _v_ {
+        public void setAnger(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
 
-        public void setVigorlong _v_ {
+        public void setVigor(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
 
-        public void setActivitybpsyslong _v_ {
+        public void setActivitybpsys(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
 
-        public void setTodaypropsysswitchcountlong _v_ {
+        public void setTodaypropsysswitchcount(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
@@ -3122,12 +3123,12 @@ public final class Properties extends XBean implements xbean.Properties {
             throw new UnsupportedOperationException();
         }
 
-        public void setDyecoloridlong _v_ {
+        public void setDyecolorid(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
 
-        public void setBaoshidulong _v_ {
+        public void setBaoshidu(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
@@ -3147,7 +3148,7 @@ public final class Properties extends XBean implements xbean.Properties {
             throw new UnsupportedOperationException();
         }
 
-        public void setFightvaluelong _v_ {
+        public void setFightvalue(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
@@ -3167,7 +3168,7 @@ public final class Properties extends XBean implements xbean.Properties {
             throw new UnsupportedOperationException();
         }
 
-        public void setConvertxiulianexplong _v_ {
+        public void setConvertxiulianexp(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
@@ -3177,7 +3178,7 @@ public final class Properties extends XBean implements xbean.Properties {
             throw new UnsupportedOperationException();
         }
 
-        public void setDayonlinesecondslong _v_ {
+        public void setDayonlineseconds(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
@@ -3187,7 +3188,7 @@ public final class Properties extends XBean implements xbean.Properties {
             throw new UnsupportedOperationException();
         }
 
-        public void setSend_recharge_times_tip_mail_nolong _v_ {
+        public void setSend_recharge_times_tip_mail_no(int _v_) {
             Properties.this._xdb_verify_unsafe_();
             throw new UnsupportedOperationException();
         }
